@@ -1,10 +1,10 @@
-import './App.css'
-
+import './App.css';
+import {Todos} from "./components/Todos.tsx";
 function App() {
-
-  return (
-    <></>
-  )
+    return(
+        <>
+            <Todos/>
+        </>
+    );
 }
-
 export default App
