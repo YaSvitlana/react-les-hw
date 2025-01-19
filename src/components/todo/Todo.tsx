@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {ITodo} from "../../models/ITodo.ts";
 import './Todo.css';
 interface TodoProps {
