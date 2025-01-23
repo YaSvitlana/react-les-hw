@@ -9,7 +9,7 @@ export const UserComponent:FC<Props> = ({user}) => {
 
     const navigation = useNavigate()
     const onButtonClickNavigate = () => {
-            navigation('/users/' + user.id+'/carts')
+            navigation(`/users/${user.id}/carts`)
         }
 
             return <div>

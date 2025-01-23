@@ -3,11 +3,11 @@ import {Outlet} from "react-router";
 
 export const UsersPage = () => {
     return (
-        <div>
-            <hr/>
-            <Outlet/>
-            <hr/>
+        <div style={{display: 'flex'}}>
             <UsersComponent/>
+            <div style={{marginLeft: '20px'}}>
+            <Outlet/>
+            </div>
         </div>
     );
 };
