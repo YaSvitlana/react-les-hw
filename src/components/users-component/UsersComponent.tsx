@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
-import { IUser } from "../../models/IUser.ts";
-import { getAll } from "../../services/general.api.service.ts";
-import { IBaseResponseModel } from "../../models/IBaseResponseModel.ts";
-import { UserComponent } from "./UserComponent.tsx";
+import {useEffect, useState} from "react";
+import {IUser} from "../../models/IUser.ts";
+import {getAll} from "../../services/general.api.service.ts";
+import {IBaseResponseModel} from "../../models/IBaseResponseModel.ts";
+import {UserComponent} from "./UserComponent.tsx";
+import {PaginationComponent} from "../pagination-component/PaginationComponent.tsx";
 
 export const UsersComponent = () => {
     const [users, setUsers] = useState<IUser[]>([]);
@@ -40,22 +41,13 @@ export const UsersComponent = () => {
                 ))}
             </div>
 
-            {}
-            <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'left', gap: '10px' }}>
-                <button
-                    onClick={() => setPage((prev) => Math.max(prev - 1, 0))}
-                    disabled={page === 0}
-                >
-                    prev
-                </button>
-                <button
-                    onClick={() => setPage((prev) => Math.min(prev + 1, totalPages - 1))}
-                    disabled={page === totalPages - 1}
-                >
-                    next
-                </button>
-            </div>
+            <PaginationComponent
+                currentPage={page}
+                totalPages={totalPages}
+                onPageChange={setPage}
+            />
         </div>
     );
 };
+
 
