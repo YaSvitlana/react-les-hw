@@ -1,11 +1,13 @@
-import {IUser} from "../../models/IUser.ts";
+import { IUser } from "../../models/IUser.ts";
 
 interface UserComponentProps {
-    user: IUser
+    user: IUser;
 }
 
-export const UserComponent = ({user}: UserComponentProps) => {
+export const UserComponent = ({ user }: UserComponentProps) => {
     return (
-        <div>{user.username}</div>
+        <div>
+             {user.id} -  {user.username}
+        </div>
     );
 };
